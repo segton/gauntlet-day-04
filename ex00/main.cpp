@@ -14,11 +14,12 @@ int main()
     entity.emplace_back(Entity{13, "rat", 4});
 
     std::cout << "-- roster --\n";
+
     for(auto it = entity.begin(); it != entity.end();)
     {
         std::cout << it->id << " " << it->name << " (hp " << it->hp << ")\n";
 
-        if(it->hp < 5)
+        if(it->hp <= 5)
         {
             it = entity.erase(it);
         }
